@@ -1,0 +1,17 @@
+.navbar-brand{
+   font-size: 25px;
+   font-weight: 700;
+}
+
+.abt-me{
+   display: flex;
+   justify-content: center;
+   line-height: 1.4;
+   margin-top: 1.5rem;
+   max-width: 900px;
+   text-align: justify;
+}
+
+hr {
+   width: 70%;
+}
