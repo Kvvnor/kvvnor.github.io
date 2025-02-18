@@ -57,3 +57,11 @@ ul strong{
 .line-experience {
    width: 100%;
 }
+
+.ac {
+   text-align: center;
+}
+
+.fpm {
+   text-align: end;
+}
