@@ -1,5 +1,8 @@
 
 header h1 {
     background-color: indigo;
+}
 
+.card-body {
+    background-color: indigo;
 }
