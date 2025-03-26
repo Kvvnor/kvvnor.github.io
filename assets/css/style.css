@@ -1,5 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Boldonse&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+
+
+body {
+    font-family: "Montserrat";
+}
+
+/* Grid-template-areas */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 250px auto;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "sidebar header"
+        "sidebar main"
+        "footer main";
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* Sidebar */
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: #023859;
+    padding: 1rem;
+    color: white;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar-title {
+    margin: 2rem;
+    font-size: 1.2rem;
+}
+
+.menu {
+    padding: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu li {
+    padding: 2rem;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+}
+
+.menu a:hover {
+    color: #a9a8a8;
+    transition: 0.3s ease-out;
+}
+
+.menu-bars {
+    display: none;
+}
+
+/* Header */
+
+.header {
+    grid-area: header;
+    background-color: #1A2E40;
+    padding: 1rem;
+    text-align: center;
+}
+
+.filter h3 {
+    color: white;
+    margin: 10px;
+}
+
+.header .select {
+    width: 500px;
+    height: 30px;
+}
+
+/* Main */
+
+.main {
+    grid-area: main;
+    background-color: white;
+    padding: 1.5rem;
+    overflow-y: auto;
+}
+
+/* Main areas */
+
+.main .card-container {
+    grid-area: main;
+    display: grid;
+    grid-template-areas:
+        'cards'
+        'pagination';
+}
+
+.main .card-container {
+    grid-area: cards;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.main .card-container {
+    grid-area: pagination;
+}
+
+
+/* Cards */
+
+.main .card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem;
+    box-shadow: 0px 1px 7px rgb(76, 76, 76);
+    gap: 6px;
+    background-color: white;
+    text-align: center;
+    transition: transform 0.3s ease;
+    transform: translateY(-5px);
+}
+
+.card:hover {
+    transition: transform 0.3s ease;
+    transform: translateY(5px);
+}
+
+.main .card img {
+    width: 100%;
+}
+
+.card h3 {
+    margin: 0.4rem;
+}
+
+.card .value {
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: blue;
+    margin: 10px;
+}
+
+.see-more a {
+    text-decoration: none;
+    color: blue;
+}
+
+.see-more {
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border-radius: 10px;
+    border-color: #ddd;
+    background-color: #fff;
+    font-size: 20px;
+    transition: transform 0.3s ease;
+    transform: translateX(-5px);
+}
+
+.see-more:hover {
+    transition: transform 0.3s ease;
+    transform: translateX(5px);
+}
+
+/* Pagination */
+
+.pagination {
+    margin-top: 2rem;
+    background-color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+.pagination a {
+    text-decoration: none;
+    padding: 12px;
+    margin: 4px;
+    border: 1px solid #ddd;
+    box-shadow: 1px 0px 7px;
+    border-radius: 4px;
+    font-size: larger;
+    color: black;
+    background-color: white;
+}
+
+.pagination a:hover {
+    color: aqua;
+    transition: 0.2s;
+}
+
+.pagination .number-active {
+    background-color: blue;
+    border-color: blue;
+}
+
+/* Footer */
+
+.footer {
+    grid-area: footer;
+    background-color: #125883;
+    padding: 1rem;
+    text-align: center;
+    color: white;
+}
+
+.footer .social-media {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    gap: 1rem;
+}
+
+.social-media i {
+    margin: 6px;
+    color: white;
+}
+
+.social-media i:hover {
+    color: #6d6d6d;
+    transition: 0.3s ease-out;
+}
+
+.footer-text {
+    margin: 12px;
+}
+
+/* Medias */
+
+@media (max-width: 576px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr auto;
+        grid-template-areas: 
+        "sidebar"
+        "header"
+        "main"
+        "footer";
+    }
+
+
+    .sidebar {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 3rem; 
+    }
+
+    .sidebar-title {
+        font-size: 24px;
+    }
+
+    .menu {
+        display: none;
+    }
+
+   .menu-bars {
+        display: contents;
+        font-size: 25px;
+    }
+
+    .menu-bars a {
+        text-decoration: none;
+        color: white;
+    }
+    .menu-bars a:hover {
+        transition: 0.3s ease;
+        color: #6d6d6d ;
+    }
+
+    .header .select {
+        width: 450px;
+
+    }
+
+    .main .card-container{
+        grid-template-columns: 1fr;
+    }
 }
